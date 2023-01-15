@@ -1,0 +1,118 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray1: #111;
+  --gray2: #222;
+  --gray3: #333;
+  --gray4: #444;
+  --gray7: #777;
+  --grayA: #aaa;
+  --red1: #400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(lowpoly.png) no-repeat center center;
+  font: 400 25px/1 "Open Sans";
+}
+
+.calculator-container {
+  background: var(--black);
+  color: var(--white);
+  width: 514px;
+}
+
+/* Screen style */
+.top-screen {
+  height: 100px;
+  background: #006e2e;
+  background: -moz-linear-gradient(top, #006e2e 0%, #004c15 100%);
+  background: -webkit-linear-gradient(top, #006e2e 0%, #004c15 100%);
+  background: linear-gradient(to bottom, #006e2e 0%, #004c15 100%);
+  color: #aed39e;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  padding: 15px;
+  font: 600 40px/1 Orbitron;
+  overflow: hidden;
+}
+
+.smaller-line {
+  font-size: 20px;
+}
+/* Main keys style*/
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 50px;
+  border: var(--gray2) 1px solid;
+}
+
+.key::selection,
+.key *::selection {
+  background: none;
+}
+
+.key.key-operations-basic,
+.key.key-remove {
+  background: var(--gray1);
+}
+
+.key.key-inactive {
+  background: var(--red1);
+}
+
+.key.key-equals {
+  background: var(--gray7);
+}
+
+.key.key-span-2 {
+  grid-column: span 2;
+}
+
+.key sup,
+.key sub {
+  font-size: 16px;
+  position: relative;
+  top: -5px;
+}
+
+.key sub {
+  top: 5px;
+}
+
+/* Pseudo classes */
+.key:hover {
+  background: var(--gray4);
+}
+
+.key.key-equals:hover {
+  background: var(--grayA);
+}
+
+.key.pressed {
+  padding: 22px 50px 18px;
+  background: var(--gray4);
+}
